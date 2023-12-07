@@ -5,6 +5,7 @@ import 'package:e_commerce_app/core/managers/values.dart';
 import 'package:e_commerce_app/core/network/local/cache_helper.dart';
 import 'package:e_commerce_app/core/network/remote/dio_helper.dart';
 import 'package:e_commerce_app/screens/modules/on_boarding.dart';
+import 'package:e_commerce_app/screens/modules/product_screen.dart';
 import 'package:e_commerce_app/screens/modules/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -23,7 +24,11 @@ void main() async {
   print(nationalId);
 
   if (boarding) {
-    nextScreen = RegisterScreen();
+    if (token != null) {
+      nextScreen = const ProductScreen();
+    } else {
+      nextScreen = RegisterScreen();
+    }
   } else {
     nextScreen = const OnBoardingScreen();
   }
