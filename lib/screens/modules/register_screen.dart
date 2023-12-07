@@ -52,9 +52,9 @@ class RegisterScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text('Register Screen'),
         ),
-        body: Form(
-          key: formKey,
-          child: SingleChildScrollView(
+        body: SingleChildScrollView(
+          child: Form(
+            key: formKey,
             child: Column(
               children: [
                 const Text(
